@@ -86,7 +86,7 @@ namespace uSnippets {
 		static bool  verbose(bool b) { return verbose() = b; };
 		
 		Assert (bool condition, int level=9) : condition(condition), l(not verbose() and condition?nullptr:new Log(level)) {}
-		~Assert() {
+		~Assert() noexcept(false) {
 			if (l) {
 				std::string s = l->msg();
 				delete l;

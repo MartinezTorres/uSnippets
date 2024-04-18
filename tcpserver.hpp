@@ -15,6 +15,7 @@
 
 #include <list>
 
+#include <boost/noncopyable.hpp>
 #include <boost/asio.hpp>
 
 namespace uSnippets {

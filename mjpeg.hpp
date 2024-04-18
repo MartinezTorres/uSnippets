@@ -9,7 +9,7 @@
 
 #include <uSnippets/tcpserver.hpp>
 #include <turbojpeg.h>
-#include <opencv/cv.h>
+#include <opencv2/opencv.hpp>
 
 namespace uSnippets {
 class Mjpeg : public HTTPServer {
@@ -57,6 +57,8 @@ public:
 				net << "Content-Type: image/jpeg\r\n\r\n";
 				net << msg << "\r\n\r\n";
 				net << std::flush;
+
+				std::this_thread::sleep_for( std::chrono::milliseconds(250) );
 			}
 		});
 		
